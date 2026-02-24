@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\ExternalLoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SsoController;
 use Illuminate\Support\Facades\Route;
+
+Route::post('/external-login', [ExternalLoginController::class, 'login']);
+Route::get('/check-sso', [SsoController::class, 'check']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +22,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
