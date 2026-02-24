@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'ecommerce' => [
+        'url' => env('ECOMMERCE_APP_URL')
+    ],
+
 ];
